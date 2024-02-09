@@ -24,7 +24,7 @@ for i in range(len(phonenos)):
 #######################################
 
 ################################
-gpath = r"./pages/data/generalInfo.xlsx"
+gpath = r"/opt/render/project/src/src/pages/data/generalInfo.xlsx"
 availableInfoDf = pd.read_excel(gpath,engine='openpyxl')
 availableInfocols = list(availableInfoDf.columns)
 components = []
