@@ -9,3 +9,5 @@ dash-table
 numpy
 pandas
 plotly
+openpyxl
+xlrd
