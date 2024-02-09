@@ -7,12 +7,11 @@ from dash import Dash, dcc, html, dash_table, Input, Output, State, callback
 
 dash.register_page(__name__)
 
-import os
-print(os.getcwd())
-kpath1 = r'./pages/data/kiranaItems.xlsx'
+
+kpath1 = r'/opt/render/project/src/src/pages/data/kiranaItems.xlsx'
 kirana_df1 = pd.read_excel(kpath1,engine='openpyxl')
 
-kpath2 = r'./pages/data/kiranaBarcodes.xlsx'
+kpath2 = r'/opt/render/project/src/src/pages/data/kiranaBarcodes.xlsx'
 kirana_df2 = pd.read_excel(kpath2,engine='openpyxl')
 
 

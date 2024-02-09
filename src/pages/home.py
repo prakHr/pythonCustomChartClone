@@ -5,7 +5,7 @@ import dash_mantine_components as dmc
 dash.register_page(__name__, path='/')
 
 ################################
-kpath = r'./pages/data/phoneNos.xlsx'
+kpath = r'/opt/render/project/src/src/pages/data/phoneNos.xlsx'
 kirana_df = pd.read_excel(kpath,engine='openpyxl')
 phonenos = kirana_df['phone Numbers'].tolist()
 gradients = [
