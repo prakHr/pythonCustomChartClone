@@ -18,8 +18,9 @@ gradients = [
 phone_children = []
 for i in range(len(phonenos)):
     component = dmc.Badge(f"{phonenos[i]}",variant = "gradient",gradient = gradients[i%len(gradients)],size="xl")
-    phone_children.append(html.Br())
-    phone_children.append(html.Br())
+    if i%4==0:
+        phone_children.append(html.Br())
+        phone_children.append(html.Br())
     phone_children.append(component)
 #######################################
 
