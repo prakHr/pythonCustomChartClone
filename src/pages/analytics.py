@@ -7,11 +7,35 @@ import datetime
 import io
 
 import pandas as pd
+import numpy as np
 import plotly.express as px
+import plotly.graph_objects as go
+
 dash.register_page(__name__)
 
+kpath1 = r'/opt/render/project/src/src/pages/data/kiranaItems.xlsx'
+kirana_df1 = pd.read_excel(kpath1,engine='openpyxl')
 
+l1,l2 = kirana_df1['kirana_name'].tolist(),kirana_df1['items'].tolist()
+colors = [i for i in range(1,len(l2)+1)]
+fig = go.Figure()
+# colorscales = px.colors.named_colorscales()
+fig.add_trace(
+    go.Scattergl(
+        x = np.array(l1),
+        y = np.array(l2),
+        mode = 'markers',
+        marker = dict(
+            line = dict(
+                width = 1,
+            ),
+            color = colors
+        ),
+        
+    )
+)
 layout = html.Div([
+    html.Div(dcc.Graph(figure=fig)),
     html.H1('Two Dimensional Scatter Plot'),
     html.Div([
         dcc.Upload(
